@@ -350,10 +350,13 @@ body {
   /* outline: 1px solid red; */
 }
 
-/* .phon {
+.phon {
   background-image: url(../images/phone-black.svg);
 }
-.mail {
+.form-input:focus + .phon {
+  fill: var(--accent-color);
+}
+/* .mail {
   background-image: url(../images/email-black.svg);
 }
 .person {
