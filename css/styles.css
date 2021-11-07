@@ -42,6 +42,18 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0px;
+  padding: 0px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
 .list {
   display: flex;
   list-style: none;
@@ -319,25 +331,17 @@ body {
   flex-direction: column;
 }
 .form-text {
-  /* display: inline-block; */
   font-family: Roboto, sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
   letter-spacing: 0.03em;
-  /* text-decoration: none; */
   text-align: center;
   margin-bottom: 12px;
   /* margin: 40px 40px 12px 40px; */
 
   color: var(--primary-text-color);
 }
-/* .form-field {
-  position: relative;
-  */
-
-/* margin-left: 40px;
-  margin-right: 40px; */
 
 .form-input-icon {
   display: block;
@@ -345,19 +349,8 @@ body {
   margin-top: 4px;
   /* outline: 1px solid red; */
 }
-/* .form-icon {
-  display: block;
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.phon {
+
+/* .phon {
   background-image: url(../images/phone-black.svg);
 }
 .mail {
@@ -377,30 +370,32 @@ body {
   width: 18px;
   height: 18px;
   fill: var(--primary-text-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-input:focus + .form-icon {
   fill: var(--accent-color);
 }
 .form-label {
-  /* display: inline-block; */
   font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
   margin-bottom: 10px;
-  /* text-decoration: none; */
 
   color: var(--second-color);
 }
 
 .form-input {
-  /* display: block; */
   width: 100%;
   min-height: 40px;
   outline: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding: 12px 0px 12px 42px;
+  box-shadow: 1px, 0px, 2px rgba(0, 0, 0, 0.2), 1px, 0px,
+    1px rgba(0, 0, 0, 0.14), 3px, 0px, 1px rgba(0, 0, 0, 0.12);
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   cursor: pointer;
 }
@@ -409,7 +404,6 @@ body {
   outline: none;
 }
 .form-coment {
-  /* display: inline-block; */
   font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 12px;
@@ -427,6 +421,19 @@ body {
   margin-bottom: 20px;
   margin-top: 4px;
   padding: 12px 16px;
+
+  box-shadow: 1px, 0px, 2px rgba(0, 0, 0, 0.2), 1px, 0px,
+    1px rgba(0, 0, 0, 0.14), 3px, 0px, 1px rgba(0, 0, 0, 0.12);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-textarea::placeholder {
+  /* text-transform: uppercase; */
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  color: rgba(117, 117, 117, 0.5);
+  letter-spacing: 0.01em;
 }
 .form-textarea:focus {
   border-color: var(--accent-color);
@@ -435,22 +442,42 @@ body {
 textarea {
   resize: none;
 }
+.policy-label::before {
+  display: block;
+  content: ' ';
+  width: 16px;
+  height: 15px;
+  border: 1px solid var(--primary-text-color);
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 7px;
+}
+.checkbox-policy:checked + .policy-label::before {
+  background-image: url(../images/icon-check.svg);
+}
+.checkbox-policy:focus + .policy-label::before {
+  outline: 1px solid var(--accent-color);
+}
+.checkbox-field {
+  margin-bottom: 30px;
+}
 .policy-label {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
-  text-decoration: none;
-  margin-bottom: 30px;
+
   color: var(--second-color);
 }
 .contract {
   color: var(--accent-color);
 }
 .submit-button {
-  display: block;
+  display: inline-block;
   /* padding-top: 10px 55px; */
   width: 200px;
   min-height: 50px;
@@ -466,9 +493,17 @@ textarea {
   border: transparent;
   margin-right: auto;
   margin-left: auto;
+  box-shadow: 4px, 0px, 4px rgba(0, 0, 0, 0.15);
 
   color: var(--first-color);
   background-color: var(--accent-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.submit-button:hover,
+.submit-button:focus {
+  background-color: #188ce8;
+  outline: 2px solid #188ce8;
 }
 
 /* features */
