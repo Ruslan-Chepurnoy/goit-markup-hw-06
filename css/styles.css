@@ -443,6 +443,7 @@ textarea {
 
 .checkbox-policy:checked + .policy-label::before {
   background-image: url(../images/icon-check.svg);
+  border: none;
 }
 .checkbox-policy:focus + .policy-label::before {
   outline: 1px solid var(--accent-color);
