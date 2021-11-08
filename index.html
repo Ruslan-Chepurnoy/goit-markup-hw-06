@@ -75,26 +75,26 @@
             <label class="form-label"
               >Имя
               <span class="form-input-icon">
-                <input type="text" class="form-input" name="name" />
+                <input type="text" class="form-input" name="name" required />
                 <svg class="form-icon" width="18" height="18">
                   <use href="./images/icons.svg#icon-person"></use></svg></span
             ></label>
             <label class="form-label"
               >Телефон
               <span class="form-input-icon">
-                <input type="text" class="form-input" name="tel" />
+                <input type="tel" class="form-input" name="tel" required />
                 <svg class="form-icon" width="18" height="18">
-                  <use href="./images/phone-black.svg"></use>
-                </svg> </span
+                  <use
+                    href="./images/icons.svg#icon-phonee-data"
+                  ></use></svg></span
             ></label>
 
             <label class="form-label"
               >Почта
               <span class="form-input-icon">
-                <input type="text" class="form-input" name="mail" />
+                <input type="email" class="form-input" name="mail" required />
                 <svg class="form-icon" width="18" height="18">
-                  <use href="./images/icons.svg#icon-email-black"></use>
-                </svg> </span
+                  <use href="./images/icons.svg#icon-emaill"></use></svg></span
             ></label>
 
             <label class="form-coment"
@@ -503,6 +503,7 @@
               class="footer-form-input"
               name="mail"
               placeholder="E-mail"
+              required
             />
             <samp class="footer-button-field">
               <button type="submit" class="submit-footer-button">
